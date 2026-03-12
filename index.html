@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+# placeholder// to add the file to unstaged changes/ commit/ git staging
+<html>
+<head>
+    <title>Sort String API</title>
+</head>
+<body>
+
+<h2>Sort String</h2>
+
+<input type="text" id="textInput" placeholder="Enter text">
+<button onclick="sortText()">Sort</button>
+
+<p id="result"></p>
+
+<script>
+function sortText() {
+    const text = document.getElementById("textInput").value;
+
+    fetch("http://localhost:8080/api/sort?text=" + text)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("result").innerText = data;
+        });
+}
+</script>
+
+</body>
+</html>
